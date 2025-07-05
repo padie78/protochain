@@ -1,0 +1,61 @@
+<h2>Admin Dashboard</h2>
+
+<h3>Wallets</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Clave Pública</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let wallet of wallets">
+      <td>{{ wallet.username }}</td>
+      <td>{{ wallet.publicKey }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Transacciones</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Desde</th>
+      <th>Hasta</th>
+      <th>Monto</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tx of transactions">
+      <td>{{ tx.from }}</td>
+      <td>{{ tx.to }}</td>
+      <td>{{ tx.amount }}</td>
+      <td>{{ tx.timestamp | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Bloques</h3>
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead>
+    <tr>
+      <th>Índice</th>
+      <th>Timestamp</th>
+      <th>Hash</th>
+      <th>Hash Anterior</th>
+      <th>Transacciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let block of blocks">
+      <td>{{ block.index }}</td>
+      <td>{{ block.timestamp | date:'short' }}</td>
+      <td>{{ block.hash }}</td>
+      <td>{{ block.previousHash }}</td>
+      <td>{{ block.transactions.length }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div *ngIf="error" style="color: red;">{{ error }}</div>

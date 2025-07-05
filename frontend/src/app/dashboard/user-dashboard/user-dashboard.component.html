@@ -1,0 +1,44 @@
+<h2>Mi Wallet</h2>
+<p><strong>Clave pública:</strong> {{ walletPublicKey  }}</p>
+
+<h3>Enviar Transacción</h3>
+<form [formGroup]="txForm" (ngSubmit)="submitTransaction()">
+
+  <label>Clave pública del destinatario</label>
+  <textarea
+    formControlName="toPublicKey"
+    rows="8"
+    placeholder="Pega aquí la clave pública completa"
+  ></textarea>
+
+
+
+  
+  <label>Monto</label>
+  <input formControlName="amount" type="number" step="0.01" />
+  
+  <button type="submit" [disabled]="txForm.invalid">Enviar</button>
+</form>
+
+<div *ngIf="error" style="color: red;">{{ error }}</div>
+<div *ngIf="success" style="color: green;">{{ success }}</div>
+
+<h3>Historial de Transacciones</h3>
+<table border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Desde</th>
+      <th>Hasta</th>
+      <th>Monto</th>
+      <th>Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let tx of transactions">
+      <td>{{ tx.from }}</td>
+      <td>{{ tx.to }}</td>
+      <td>{{ tx.amount }}</td>
+      <td>{{ tx.timestamp | date:'short' }}</td>
+    </tr>
+  </tbody>
+</table>
