@@ -78,4 +78,4 @@ This project is licensed under the MIT License.
 📬 Contact
 GitHub: @padie78
 
-Email: padie78@example.com
+Email: padie78@gmail.com
