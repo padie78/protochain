@@ -53,7 +53,6 @@ Docker & Docker Compose – Service orchestration
 TypeScript – Backend and frontend codebase
 
 📁 Project Structure
-
 protochain/
 ├── backend/              # Node.js + Express blockchain API
 │   └── src/
