@@ -44,21 +44,13 @@ JWT tokens are stored in the frontend and sent via Authorization: Bearer headers
 
 📦 Tech Stack
 Node.js – Blockchain API (Express)
-
 Angular 18+ – Frontend SPA
-
 JWT – User authentication
-
 RSA / ECDSA – Digital signature handling
-
 SHA-256 – Block hashing algorithm
-
 WebSocket (optional) – Real-time updates
-
 Docker & Docker Compose – Service orchestration
-
 TypeScript – Backend and frontend codebase
-
 
 📁 Project Structure
 
